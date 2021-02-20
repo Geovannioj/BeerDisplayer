@@ -17,6 +17,8 @@
 		D4799F3825DEFC8A003D2EA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4799F3625DEFC8A003D2EA6 /* LaunchScreen.storyboard */; };
 		D4799F4325DEFC8A003D2EA6 /* BeerViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4799F4225DEFC8A003D2EA6 /* BeerViewerTests.swift */; };
 		D4799F4E25DEFC8A003D2EA6 /* BeerViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4799F4D25DEFC8A003D2EA6 /* BeerViewerUITests.swift */; };
+		D4799F6325E0A587003D2EA6 /* BeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4799F6225E0A587003D2EA6 /* BeerModel.swift */; };
+		D4799F6525E0B326003D2EA6 /* modelJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = D4799F6425E0B326003D2EA6 /* modelJSON.json */; };
 		FC59EADCB0AE40C558A18651 /* Pods_BeerViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDAE21F79FCFCC2D491F9E6 /* Pods_BeerViewer.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,8 @@
 		D4799F4925DEFC8A003D2EA6 /* BeerViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeerViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4799F4D25DEFC8A003D2EA6 /* BeerViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewerUITests.swift; sourceTree = "<group>"; };
 		D4799F4F25DEFC8A003D2EA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4799F6225E0A587003D2EA6 /* BeerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerModel.swift; sourceTree = "<group>"; };
+		D4799F6425E0B326003D2EA6 /* modelJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = modelJSON.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,8 @@
 		D4799F5B25E0A3C9003D2EA6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D4799F6425E0B326003D2EA6 /* modelJSON.json */,
+				D4799F6225E0A587003D2EA6 /* BeerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4799F3825DEFC8A003D2EA6 /* LaunchScreen.storyboard in Resources */,
+				D4799F6525E0B326003D2EA6 /* modelJSON.json in Resources */,
 				D4799F3525DEFC8A003D2EA6 /* Assets.xcassets in Resources */,
 				D4799F3325DEFC87003D2EA6 /* Main.storyboard in Resources */,
 			);
@@ -420,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4799F3025DEFC87003D2EA6 /* ViewController.swift in Sources */,
+				D4799F6325E0A587003D2EA6 /* BeerModel.swift in Sources */,
 				D4799F2C25DEFC87003D2EA6 /* AppDelegate.swift in Sources */,
 				D4799F2E25DEFC87003D2EA6 /* SceneDelegate.swift in Sources */,
 			);
