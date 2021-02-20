@@ -101,7 +101,6 @@
 				8265C7786C153705D608E739 /* Pods-BeerViewerTests.debug.xcconfig */,
 				8E8C8C405A9948ADF5583526 /* Pods-BeerViewerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -130,12 +129,13 @@
 		D4799F2A25DEFC87003D2EA6 /* BeerViewer */ = {
 			isa = PBXGroup;
 			children = (
-				D4799F2B25DEFC87003D2EA6 /* AppDelegate.swift */,
-				D4799F2D25DEFC87003D2EA6 /* SceneDelegate.swift */,
-				D4799F2F25DEFC87003D2EA6 /* ViewController.swift */,
+				D4799F5D25E0A3E3003D2EA6 /* NetworkManager */,
+				D4799F5B25E0A3C9003D2EA6 /* Model */,
+				D4799F6025E0A477003D2EA6 /* View */,
+				D4799F5C25E0A3D2003D2EA6 /* ViewModel */,
+				D4799F5E25E0A3F5003D2EA6 /* Infra */,
+				D4799F5F25E0A421003D2EA6 /* Resources */,
 				D4799F3125DEFC87003D2EA6 /* Main.storyboard */,
-				D4799F3425DEFC8A003D2EA6 /* Assets.xcassets */,
-				D4799F3625DEFC8A003D2EA6 /* LaunchScreen.storyboard */,
 				D4799F3925DEFC8A003D2EA6 /* Info.plist */,
 			);
 			path = BeerViewer;
@@ -157,6 +157,53 @@
 				D4799F4F25DEFC8A003D2EA6 /* Info.plist */,
 			);
 			path = BeerViewerUITests;
+			sourceTree = "<group>";
+		};
+		D4799F5B25E0A3C9003D2EA6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D4799F5C25E0A3D2003D2EA6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D4799F5D25E0A3E3003D2EA6 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		D4799F5E25E0A3F5003D2EA6 /* Infra */ = {
+			isa = PBXGroup;
+			children = (
+				D4799F2B25DEFC87003D2EA6 /* AppDelegate.swift */,
+				D4799F2D25DEFC87003D2EA6 /* SceneDelegate.swift */,
+			);
+			path = Infra;
+			sourceTree = "<group>";
+		};
+		D4799F5F25E0A421003D2EA6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D4799F3625DEFC8A003D2EA6 /* LaunchScreen.storyboard */,
+				D4799F3425DEFC8A003D2EA6 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D4799F6025E0A477003D2EA6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D4799F2F25DEFC87003D2EA6 /* ViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		DE8F3689B0883DFB8C09436E /* Frameworks */ = {
