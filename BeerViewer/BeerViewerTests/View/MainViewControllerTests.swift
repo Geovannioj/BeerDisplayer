@@ -7,27 +7,66 @@
 //
 
 import XCTest
+@testable import BeerViewer
 
 class MainViewControllerTests: XCTestCase {
 
+    var sut: MainViewController!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        sut = storyboard.instantiateViewController(identifier: "MainViewController") as MainViewController
+        
+        sut.loadViewIfNeeded()
+        sut.viewDidLoad()
+        sut.beerViewModel = ViewModelMock()
+        sut.beers = JSONLoader().parseJSON()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testBeersNotNil() throws {
+        XCTAssertNotNil(sut.beers)
     }
+    
+    func testPresentDetailView() {
+        sut.viewDidLoad()
+        sut.beers = JSONLoader().parseJSON()
+        sut.presentDetailView(beerIndex: 0)
+        XCTAssertNil(sut.presentedViewController)
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
+    
+    func testHasATableView() {
+           XCTAssertNotNil(sut.tableView)
+       }
+       
+       func testTableViewHasDelegate() {
+           XCTAssertNotNil(sut.tableView.delegate)
+       }
+       
+       func testTableViewConfromsToTableViewDelegateProtocol() {
+           XCTAssertTrue(sut.conforms(to: UITableViewDelegate.self))
+           XCTAssertTrue(sut.responds(to: #selector(sut.tableView(_:didSelectRowAt:))))
+       }
+       
+       func testTableViewHasDataSource() {
+           XCTAssertNotNil(sut.tableView.dataSource)
+       }
+       
+       func testTableViewConformsToTableViewDataSourceProtocol() {
+           XCTAssertTrue(sut.conforms(to: UITableViewDataSource.self))
+//           XCTAssertTrue(sut.responds(to: #selector(sut.numberOfSections(in:))))
+           XCTAssertTrue(sut.responds(to: #selector(sut.tableView(_:numberOfRowsInSection:))))
+           XCTAssertTrue(sut.responds(to: #selector(sut.tableView(_:cellForRowAt:))))
+       }
 
+       func testTableViewCellHasReuseIdentifier() {
+           let cell = sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? CustomTableViewCell
+           let actualReuseIdentifer = cell?.reuseIdentifier
+           let expectedReuseIdentifier = "cell"
+           XCTAssertEqual(actualReuseIdentifer, expectedReuseIdentifier)
+       }
 }

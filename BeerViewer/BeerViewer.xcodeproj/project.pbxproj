@@ -16,6 +16,9 @@
 		D456389D25E0F5D80032E143 /* BeerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456389C25E0F5D80032E143 /* BeerViewModelTests.swift */; };
 		D456389F25E0F5FA0032E143 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456389E25E0F5FA0032E143 /* MainViewControllerTests.swift */; };
 		D45638A125E0F6200032E143 /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45638A025E0F6200032E143 /* DetailViewControllerTests.swift */; };
+		D45638A325E0F6B70032E143 /* modelJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = D4799F6425E0B326003D2EA6 /* modelJSON.json */; };
+		D45638A525E0F7700032E143 /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45638A425E0F7700032E143 /* JSONLoader.swift */; };
+		D45638A825E1657D0032E143 /* ViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45638A725E1657D0032E143 /* ViewModelMock.swift */; };
 		D4799F2C25DEFC87003D2EA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4799F2B25DEFC87003D2EA6 /* AppDelegate.swift */; };
 		D4799F2E25DEFC87003D2EA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4799F2D25DEFC87003D2EA6 /* SceneDelegate.swift */; };
 		D4799F3025DEFC87003D2EA6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4799F2F25DEFC87003D2EA6 /* MainViewController.swift */; };
@@ -25,7 +28,6 @@
 		D4799F4325DEFC8A003D2EA6 /* BeerViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4799F4225DEFC8A003D2EA6 /* BeerViewerTests.swift */; };
 		D4799F4E25DEFC8A003D2EA6 /* BeerViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4799F4D25DEFC8A003D2EA6 /* BeerViewerUITests.swift */; };
 		D4799F6325E0A587003D2EA6 /* BeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4799F6225E0A587003D2EA6 /* BeerModel.swift */; };
-		D4799F6525E0B326003D2EA6 /* modelJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = D4799F6425E0B326003D2EA6 /* modelJSON.json */; };
 		D4799F6725E0B395003D2EA6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4799F6625E0B395003D2EA6 /* NetworkManager.swift */; };
 		D4ED6BD725E0C5F100B7E341 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ED6BD525E0C5F100B7E341 /* CustomTableViewCell.swift */; };
 		D4ED6BD825E0C5F100B7E341 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4ED6BD625E0C5F100B7E341 /* CustomTableViewCell.xib */; };
@@ -66,6 +68,8 @@
 		D456389C25E0F5D80032E143 /* BeerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewModelTests.swift; sourceTree = "<group>"; };
 		D456389E25E0F5FA0032E143 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		D45638A025E0F6200032E143 /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
+		D45638A425E0F7700032E143 /* JSONLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
+		D45638A725E1657D0032E143 /* ViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelMock.swift; sourceTree = "<group>"; };
 		D4799F2825DEFC87003D2EA6 /* BeerViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4799F2B25DEFC87003D2EA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4799F2D25DEFC87003D2EA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +166,16 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D45638A225E0F69F0032E143 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				D4799F6425E0B326003D2EA6 /* modelJSON.json */,
+				D45638A425E0F7700032E143 /* JSONLoader.swift */,
+				D45638A725E1657D0032E143 /* ViewModelMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		D4799F1F25DEFC87003D2EA6 = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +216,7 @@
 		D4799F4125DEFC8A003D2EA6 /* BeerViewerTests */ = {
 			isa = PBXGroup;
 			children = (
+				D45638A225E0F69F0032E143 /* Mock */,
 				D456389925E0F58A0032E143 /* ViewModel */,
 				D456389825E0F57F0032E143 /* View */,
 				D456389725E0F5710032E143 /* Network */,
@@ -223,7 +238,6 @@
 		D4799F5B25E0A3C9003D2EA6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D4799F6425E0B326003D2EA6 /* modelJSON.json */,
 				D4799F6225E0A587003D2EA6 /* BeerModel.swift */,
 			);
 			path = Model;
@@ -403,7 +417,6 @@
 			files = (
 				D4799F3825DEFC8A003D2EA6 /* LaunchScreen.storyboard in Resources */,
 				D456389225E0E2220032E143 /* DetailViewController.xib in Resources */,
-				D4799F6525E0B326003D2EA6 /* modelJSON.json in Resources */,
 				D4799F3525DEFC8A003D2EA6 /* Assets.xcassets in Resources */,
 				D4ED6BD825E0C5F100B7E341 /* CustomTableViewCell.xib in Resources */,
 				D4799F3325DEFC87003D2EA6 /* Main.storyboard in Resources */,
@@ -414,6 +427,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D45638A325E0F6B70032E143 /* modelJSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,8 +566,10 @@
 				D456389B25E0F5C80032E143 /* NetworkManagerTests.swift in Sources */,
 				D45638A125E0F6200032E143 /* DetailViewControllerTests.swift in Sources */,
 				D4799F4325DEFC8A003D2EA6 /* BeerViewerTests.swift in Sources */,
+				D45638A825E1657D0032E143 /* ViewModelMock.swift in Sources */,
 				D456389D25E0F5D80032E143 /* BeerViewModelTests.swift in Sources */,
 				D456389F25E0F5FA0032E143 /* MainViewControllerTests.swift in Sources */,
+				D45638A525E0F7700032E143 /* JSONLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

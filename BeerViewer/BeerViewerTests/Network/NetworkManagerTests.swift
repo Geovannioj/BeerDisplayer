@@ -7,27 +7,32 @@
 //
 
 import XCTest
+@testable import BeerViewer
 
 class NetworkManagerTests: XCTestCase {
 
+    var sut: NetworkManager!
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        sut = NetworkManager()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+       sut = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testRequestData() throws {
+        let exp = expectation(description: "Alamofire")
+        
+         sut.requestData(page: 1, perPage: 1) { (result, model) in
+                   if result == .success {
+                       XCTAssertNotNil(model)
+                   } else {
+                       XCTAssertNil(model)
+                   }
+            exp.fulfill()
+       }
+        
+        waitForExpectations(timeout: 5.0, handler: nil)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+    
 }
