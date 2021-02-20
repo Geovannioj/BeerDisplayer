@@ -13,6 +13,7 @@ protocol NetworkProtocol {
 }
 
 class NetworkManager: NetworkProtocol {
+    var response: [BeerModel] = [BeerModel]()
     
     func parseJSON() {
         if let path = Bundle.main.path(forResource: "modelJSON", ofType: "json") {
@@ -20,10 +21,8 @@ class NetworkManager: NetworkProtocol {
                     let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                     let decoder = JSONDecoder()
                     let jsonData = try decoder.decode([BeerModel].self, from: data)
-                print(jsonData[0].name)
-//                  let decoder = JSONDecoder()
-//                  let jsonData = try decoder.decode(BeerModel.self, from: data)
-                    
+                    print(jsonData[0].name)
+                    response = jsonData
                 
               } catch {
                    print("Error parsing")

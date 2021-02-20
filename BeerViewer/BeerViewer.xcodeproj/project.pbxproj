@@ -20,6 +20,8 @@
 		D4799F6325E0A587003D2EA6 /* BeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4799F6225E0A587003D2EA6 /* BeerModel.swift */; };
 		D4799F6525E0B326003D2EA6 /* modelJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = D4799F6425E0B326003D2EA6 /* modelJSON.json */; };
 		D4799F6725E0B395003D2EA6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4799F6625E0B395003D2EA6 /* NetworkManager.swift */; };
+		D4ED6BD725E0C5F100B7E341 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ED6BD525E0C5F100B7E341 /* CustomTableViewCell.swift */; };
+		D4ED6BD825E0C5F100B7E341 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4ED6BD625E0C5F100B7E341 /* CustomTableViewCell.xib */; };
 		FC59EADCB0AE40C558A18651 /* Pods_BeerViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDAE21F79FCFCC2D491F9E6 /* Pods_BeerViewer.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		D4799F6225E0A587003D2EA6 /* BeerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerModel.swift; sourceTree = "<group>"; };
 		D4799F6425E0B326003D2EA6 /* modelJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = modelJSON.json; sourceTree = "<group>"; };
 		D4799F6625E0B395003D2EA6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D4ED6BD525E0C5F100B7E341 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		D4ED6BD625E0C5F100B7E341 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,9 +214,19 @@
 		D4799F6025E0A477003D2EA6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D4ED6BD425E0C5A300B7E341 /* CustomCell */,
 				D4799F2F25DEFC87003D2EA6 /* ViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D4ED6BD425E0C5A300B7E341 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				D4ED6BD525E0C5F100B7E341 /* CustomTableViewCell.swift */,
+				D4ED6BD625E0C5F100B7E341 /* CustomTableViewCell.xib */,
+			);
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
 		DE8F3689B0883DFB8C09436E /* Frameworks */ = {
@@ -335,6 +349,7 @@
 				D4799F3825DEFC8A003D2EA6 /* LaunchScreen.storyboard in Resources */,
 				D4799F6525E0B326003D2EA6 /* modelJSON.json in Resources */,
 				D4799F3525DEFC8A003D2EA6 /* Assets.xcassets in Resources */,
+				D4ED6BD825E0C5F100B7E341 /* CustomTableViewCell.xib in Resources */,
 				D4799F3325DEFC87003D2EA6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4ED6BD725E0C5F100B7E341 /* CustomTableViewCell.swift in Sources */,
 				D4799F3025DEFC87003D2EA6 /* ViewController.swift in Sources */,
 				D4799F6325E0A587003D2EA6 /* BeerModel.swift in Sources */,
 				D4799F6725E0B395003D2EA6 /* NetworkManager.swift in Sources */,
