@@ -19,6 +19,7 @@
 		D4799F4E25DEFC8A003D2EA6 /* BeerViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4799F4D25DEFC8A003D2EA6 /* BeerViewerUITests.swift */; };
 		D4799F6325E0A587003D2EA6 /* BeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4799F6225E0A587003D2EA6 /* BeerModel.swift */; };
 		D4799F6525E0B326003D2EA6 /* modelJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = D4799F6425E0B326003D2EA6 /* modelJSON.json */; };
+		D4799F6725E0B395003D2EA6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4799F6625E0B395003D2EA6 /* NetworkManager.swift */; };
 		FC59EADCB0AE40C558A18651 /* Pods_BeerViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDAE21F79FCFCC2D491F9E6 /* Pods_BeerViewer.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		D4799F4F25DEFC8A003D2EA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4799F6225E0A587003D2EA6 /* BeerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerModel.swift; sourceTree = "<group>"; };
 		D4799F6425E0B326003D2EA6 /* modelJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = modelJSON.json; sourceTree = "<group>"; };
+		D4799F6625E0B395003D2EA6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 		D4799F5D25E0A3E3003D2EA6 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
+				D4799F6625E0B395003D2EA6 /* NetworkManager.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 			files = (
 				D4799F3025DEFC87003D2EA6 /* ViewController.swift in Sources */,
 				D4799F6325E0A587003D2EA6 /* BeerModel.swift in Sources */,
+				D4799F6725E0B395003D2EA6 /* NetworkManager.swift in Sources */,
 				D4799F2C25DEFC87003D2EA6 /* AppDelegate.swift in Sources */,
 				D4799F2E25DEFC87003D2EA6 /* SceneDelegate.swift in Sources */,
 			);

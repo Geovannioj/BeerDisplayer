@@ -6,6 +6,14 @@
 //  Copyright © 2021 Geovanni Oliveira de Jesus. All rights reserved.
 //
 
+struct BeerResponse: Codable {
+    var beerArray: [BeerModel]
+    
+    enum CodingKeys: String, CodingKey {
+        case beerArray = ""
+    }
+}
+
 struct BeerModel: Codable {
     var id: Int
     var name: String
@@ -39,11 +47,11 @@ struct BeerModel: Codable {
         case abv
         case ibu
         case targetFg = "target_fg"
-        case targetOg = "target_oj"
+        case targetOg = "target_og"
         case ebc
         case srm
         case ph
-        case attenuationLevel = "attenuationLevel"
+        case attenuationLevel = "attenuation_level"
         case volume
         case boilVolume = "boil_volume"
         case method
@@ -66,7 +74,7 @@ struct Volume: Codable {
 
 struct Method: Codable {
     var mashTemp: [MashTemp]
-    var fermentation: Volume
+    var fermentation: Fermentation
     var twist: String?
     
     enum CodingKeys: String, CodingKey {
@@ -76,6 +84,13 @@ struct Method: Codable {
     }
 }
 
+struct Fermentation: Codable {
+    var temp: Volume
+    
+    enum CodingKeys: String, CodingKey {
+        case temp
+    }
+}
 struct MashTemp: Codable {
     var temp: Volume
     var duration: Int
