@@ -63,19 +63,5 @@ class NetworkManager: NetworkProtocol {
         self.group.leave()
         return imageData ?? Data()
     }
-    
-    func parseJSON() {
-        if let path = Bundle.main.path(forResource: "modelJSON", ofType: "json") {
-            do {
-                    let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                    let decoder = JSONDecoder()
-                    let jsonData = try decoder.decode([BeerModel].self, from: data)
-                    print(jsonData[0].name)
-                    response = jsonData
-                
-              } catch {
-                   print("Error parsing")
-              }
-        }
-    }
+
 }
