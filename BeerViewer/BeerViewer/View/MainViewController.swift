@@ -45,6 +45,15 @@ class MainViewController: UIViewController {
                                  bundle: .main),
                            forCellReuseIdentifier: cellIdentifier)
     }
+    
+    func presentDetailView(beerIndex: Int) {
+        let nib = UINib(nibName: "DetailViewController", bundle:nil)
+        let detailViewController = nib.instantiate(withOwner: self, options: nil)[0] as? DetailViewController
+
+        detailViewController?.beer = beers[beerIndex]
+        detailViewController?.viewDidLoad()
+        self.present((detailViewController)!, animated: true, completion: nil)
+   }
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
@@ -66,6 +75,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        presentDetailView(beerIndex: indexPath.row)
+        
+    }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         if indexPath.row == self.beers.count - offsetToRequest {

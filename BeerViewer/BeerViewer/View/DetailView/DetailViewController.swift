@@ -10,21 +10,30 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var tagLineContent: UILabel!
+    @IBOutlet weak var alcoholicRate: UILabel!
+    @IBOutlet weak var bitterRate: UILabel!
+    @IBOutlet weak var beerDescription: UILabel!
+    
+    var beer: BeerModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        setBeerData()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func setBeerData() {
+        self.titleLbl.text = beer?.name
+        if let data = beer?.imgData {
+            self.imgView.image = UIImage(data: data)
+        }
+        self.tagLineContent.text = beer?.tagline
+        self.alcoholicRate.text = String(describing: beer?.abv ?? Float())
+        self.bitterRate.text = String(describing: beer?.ibu ?? Float())
+        self.beerDescription.text = beer?.description
     }
-    */
 
 }
