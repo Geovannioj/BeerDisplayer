@@ -10,9 +10,11 @@
 		109BE1A1D95DCC4BBA943763 /* Pods_BeerViewer_BeerViewerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FFE63F4CDCDFFBC60D35D48 /* Pods_BeerViewer_BeerViewerUITests.framework */; };
 		84ADA30EFA27F752007A98F6 /* Pods_BeerViewerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6EC67AFD54B44864B55F7C /* Pods_BeerViewerTests.framework */; };
 		D456388D25E0DC440032E143 /* BeerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456388C25E0DC440032E143 /* BeerViewModel.swift */; };
+		D456389125E0E2220032E143 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456388F25E0E2220032E143 /* DetailViewController.swift */; };
+		D456389225E0E2220032E143 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D456389025E0E2220032E143 /* DetailViewController.xib */; };
 		D4799F2C25DEFC87003D2EA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4799F2B25DEFC87003D2EA6 /* AppDelegate.swift */; };
 		D4799F2E25DEFC87003D2EA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4799F2D25DEFC87003D2EA6 /* SceneDelegate.swift */; };
-		D4799F3025DEFC87003D2EA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4799F2F25DEFC87003D2EA6 /* ViewController.swift */; };
+		D4799F3025DEFC87003D2EA6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4799F2F25DEFC87003D2EA6 /* MainViewController.swift */; };
 		D4799F3325DEFC87003D2EA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4799F3125DEFC87003D2EA6 /* Main.storyboard */; };
 		D4799F3525DEFC8A003D2EA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4799F3425DEFC8A003D2EA6 /* Assets.xcassets */; };
 		D4799F3825DEFC8A003D2EA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4799F3625DEFC8A003D2EA6 /* LaunchScreen.storyboard */; };
@@ -54,10 +56,12 @@
 		BD6EC67AFD54B44864B55F7C /* Pods_BeerViewerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerViewerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C17180108D091673D1FCF3 /* Pods-BeerViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerViewer.release.xcconfig"; path = "Target Support Files/Pods-BeerViewer/Pods-BeerViewer.release.xcconfig"; sourceTree = "<group>"; };
 		D456388C25E0DC440032E143 /* BeerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewModel.swift; sourceTree = "<group>"; };
+		D456388F25E0E2220032E143 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D456389025E0E2220032E143 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		D4799F2825DEFC87003D2EA6 /* BeerViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4799F2B25DEFC87003D2EA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4799F2D25DEFC87003D2EA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D4799F2F25DEFC87003D2EA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D4799F2F25DEFC87003D2EA6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D4799F3225DEFC87003D2EA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4799F3425DEFC8A003D2EA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4799F3725DEFC8A003D2EA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -114,6 +118,15 @@
 				8E8C8C405A9948ADF5583526 /* Pods-BeerViewerTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D456388E25E0E1FD0032E143 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				D456388F25E0E2220032E143 /* DetailViewController.swift */,
+				D456389025E0E2220032E143 /* DetailViewController.xib */,
+			);
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 		D4799F1F25DEFC87003D2EA6 = {
@@ -217,8 +230,9 @@
 		D4799F6025E0A477003D2EA6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D456388E25E0E1FD0032E143 /* DetailView */,
 				D4ED6BD425E0C5A300B7E341 /* CustomCell */,
-				D4799F2F25DEFC87003D2EA6 /* ViewController.swift */,
+				D4799F2F25DEFC87003D2EA6 /* MainViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -352,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4799F3825DEFC8A003D2EA6 /* LaunchScreen.storyboard in Resources */,
+				D456389225E0E2220032E143 /* DetailViewController.xib in Resources */,
 				D4799F6525E0B326003D2EA6 /* modelJSON.json in Resources */,
 				D4799F3525DEFC8A003D2EA6 /* Assets.xcassets in Resources */,
 				D4ED6BD825E0C5F100B7E341 /* CustomTableViewCell.xib in Resources */,
@@ -485,11 +500,12 @@
 			files = (
 				D456388D25E0DC440032E143 /* BeerViewModel.swift in Sources */,
 				D4ED6BD725E0C5F100B7E341 /* CustomTableViewCell.swift in Sources */,
-				D4799F3025DEFC87003D2EA6 /* ViewController.swift in Sources */,
+				D4799F3025DEFC87003D2EA6 /* MainViewController.swift in Sources */,
 				D4799F6325E0A587003D2EA6 /* BeerModel.swift in Sources */,
 				D4799F6725E0B395003D2EA6 /* NetworkManager.swift in Sources */,
 				D4799F2C25DEFC87003D2EA6 /* AppDelegate.swift in Sources */,
 				D4799F2E25DEFC87003D2EA6 /* SceneDelegate.swift in Sources */,
+				D456389125E0E2220032E143 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

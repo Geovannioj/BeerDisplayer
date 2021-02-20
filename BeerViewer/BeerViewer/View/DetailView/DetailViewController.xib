@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="BeerViewer" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S05-7Z-4Iu">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7F-I2-DOx">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="818" id="YMH-mM-VAb"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Q7F-I2-DOx" firstAttribute="leading" secondItem="S05-7Z-4Iu" secondAttribute="leading" id="ATb-wl-BQK"/>
+                        <constraint firstAttribute="bottom" secondItem="Q7F-I2-DOx" secondAttribute="bottom" id="cb7-Fn-Kds"/>
+                        <constraint firstItem="Q7F-I2-DOx" firstAttribute="trailing" secondItem="S05-7Z-4Iu" secondAttribute="trailing" id="ecm-gE-Nz8"/>
+                        <constraint firstItem="Q7F-I2-DOx" firstAttribute="top" secondItem="S05-7Z-4Iu" secondAttribute="top" id="llA-hi-kx7"/>
+                        <constraint firstItem="Q7F-I2-DOx" firstAttribute="width" secondItem="S05-7Z-4Iu" secondAttribute="width" id="tlO-XX-niU"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="x8g-qn-ZTK"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="rZg-qb-8Ey"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="S05-7Z-4Iu" secondAttribute="bottom" id="1Q8-Ti-DCT"/>
+                <constraint firstItem="S05-7Z-4Iu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Fhq-mP-Hnx"/>
+                <constraint firstItem="S05-7Z-4Iu" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="aSd-LL-EmX"/>
+                <constraint firstItem="S05-7Z-4Iu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="egJ-kD-y5N"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
+        </view>
+    </objects>
+</document>
