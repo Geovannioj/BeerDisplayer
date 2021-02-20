@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
     
     var beerViewModel: BeerViewModelProtocol?
     var beers: [BeerModel] = [BeerModel]()
+    let loadingVC = LoadingViewController()
     var pageToRequest = 1
     let beersPerPage = 10
     let offsetToRequest = 5
@@ -22,22 +23,30 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setTableView()
         beerViewModel = BeerViewModel()
         
         beerViewModel?.getData(page: pageToRequest,
                                perPage: beersPerPage, completionHandler: { (status, responseData) in
                                 if let data = responseData {
+                                    self.loadingVC.dismiss(animated: false, completion: nil)
                                     self.beers = data
                                     self.tableView.reloadData()
                                 } else {
                                     print("ERROR")
                                 }
-                                
+
         })
     }
 
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadingVC.modalPresentationStyle = .overCurrentContext
+        loadingVC.modalTransitionStyle = .crossDissolve
+        present(loadingVC, animated: true, completion: nil)
+    }
+    
     private func setTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -84,10 +93,18 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.row == self.beers.count - offsetToRequest {
             pageToRequest += 1
+            if !loadingVC.isBeingPresented {
+                loadingVC.modalPresentationStyle = .overCurrentContext
+                loadingVC.modalTransitionStyle = .crossDissolve
+                present(loadingVC, animated: true, completion: nil)
+            }
+            
             beerViewModel?.getData(page: pageToRequest,
                                    perPage: beersPerPage, completionHandler: { (status, responseData) in
                                     if status == .success {
                                         if let data = responseData {
+                                            self.loadingVC.dismiss(animated: false, completion: nil)
+//                                            self.loadingVC.dismiss(animated: true, completion: nil)
                                             self.beers.append(contentsOf: data)
                                             self.tableView.reloadData()
                                         } else {
