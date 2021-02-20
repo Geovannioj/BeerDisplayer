@@ -12,35 +12,77 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var network = NetworkManager()
+    var beerViewModel: BeerViewModelProtocol?
+    var beers: [BeerModel] = [BeerModel]()
+    var pageToRequest = 1
+    let beersPerPage = 10
+    let offsetToRequest = 5
+    let cellIdentifier: String = "cell"
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UINib(nibName: "CustomTableViewCell", bundle: .main), forCellReuseIdentifier: "cell")
-        network.parseJSON()
+        setTableView()
+        beerViewModel = BeerViewModel()
+        
+        beerViewModel?.getData(page: pageToRequest,
+                               perPage: beersPerPage, completionHandler: { (status, responseData) in
+                                if let data = responseData {
+                                    self.beers = data
+                                    self.tableView.reloadData()
+                                } else {
+                                    print("ERROR")
+                                }
+                                
+        })
     }
 
 
+    private func setTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "CustomTableViewCell",
+                                 bundle: .main),
+                           forCellReuseIdentifier: cellIdentifier)
+    }
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return network.response.count
+        return self.beers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
         
-        cell.beerName.text = network.response[indexPath.row].name
-        cell.abvContent.text = String(describing: network.response[indexPath.row].abv)
+        if let imgData = self.beers[indexPath.row].imgData {
+            cell.imgView.image = UIImage(data: imgData)
+        }
+        cell.beerName.text = self.beers[indexPath.row].name
+        cell.abvContent.text = String(describing: self.beers[indexPath.row].abv!)
 
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == self.beers.count - offsetToRequest {
+            pageToRequest += 1
+            beerViewModel?.getData(page: pageToRequest,
+                                   perPage: beersPerPage, completionHandler: { (status, responseData) in
+                                    if status == .success {
+                                        if let data = responseData {
+                                            self.beers.append(contentsOf: data)
+                                            self.tableView.reloadData()
+                                        } else {
+                                            print("ERROR")
+                                        }
+                                    }
+            })
+        }
+    }
     
 }
 

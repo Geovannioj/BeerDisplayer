@@ -6,7 +6,8 @@ target 'BeerViewer' do
   use_frameworks!
 
   # Pods for BeerViewer
-
+  pod 'Alamofire', '~> 5.2'
+    
   target 'BeerViewerTests' do
     inherit! :search_paths
     # Pods for testing

@@ -5,6 +5,7 @@
 //  Created by Geovanni Oliveira de Jesus on 19/02/21.
 //  Copyright © 2021 Geovanni Oliveira de Jesus. All rights reserved.
 //
+import Foundation
 
 struct BeerResponse: Codable {
     var beerArray: [BeerModel]
@@ -16,26 +17,27 @@ struct BeerResponse: Codable {
 
 struct BeerModel: Codable {
     var id: Int
-    var name: String
-    var tagline: String
-    var firstBrewed: String
-    var description: String
-    var imgUrl: String
-    var abv: Float
-    var ibu: Int
-    var targetFg: Int
-    var targetOg: Int
-    var ebc: Int
-    var srm: Int
-    var ph: Float
-    var attenuationLevel: Int
-    var volume: Volume
-    var boilVolume: Volume
-    var method: Method
-    var ingredients: Ingredients
-    var foodPairing: [String]
-    var brewersTips: String
-    var contributedBy: String
+    var name: String?
+    var tagline: String?
+    var firstBrewed: String?
+    var description: String?
+    var imgUrl: String?
+    var abv: Float?
+    var ibu: Float?
+    var targetFg: Float?
+    var targetOg: Float?
+    var ebc: Float?
+    var srm: Float?
+    var ph: Float?
+    var attenuationLevel: Float?
+    var volume: Volume?
+    var boilVolume: Volume?
+    var method: Method?
+    var ingredients: Ingredients?
+    var foodPairing: [String]?
+    var brewersTips: String?
+    var contributedBy: String?
+    var imgData: Data?
     
     enum CodingKeys: String, CodingKey  {
         case id
@@ -59,6 +61,7 @@ struct BeerModel: Codable {
         case foodPairing = "food_pairing"
         case brewersTips = "brewers_tips"
         case contributedBy = "contributed_by"
+        case imgData
     }
 }
 
@@ -93,7 +96,7 @@ struct Fermentation: Codable {
 }
 struct MashTemp: Codable {
     var temp: Volume
-    var duration: Int
+    var duration: Int?
     
     enum CodingKeys: String, CodingKey {
         case temp
